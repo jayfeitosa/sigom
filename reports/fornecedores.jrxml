@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fornecedores" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="89c87356-6148-4aae-9329-63b1de63edaa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from tbfornecedores order by nomeforn;]]>
+	</queryString>
+	<field name="idforn" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeforn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endforn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fonefor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="emailforn" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="141" height="37" uuid="6a695ca8-c742-4ef3-96ce-3477eae5f8f8"/>
+				<textElement>
+					<font size="22"/>
+				</textElement>
+				<text><![CDATA[Fornecedores]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="455" y="0" width="100" height="20" uuid="50206e39-88f2-4b8d-afff-49225c14772b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="11" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="54" height="20" uuid="717288fd-da91-4245-884f-c108475e6612"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="54" y="0" width="112" height="20" uuid="f68816f1-1edd-44f8-b558-b0128a5ae2fd"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fornecedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="0" width="172" height="20" uuid="60b0c3b6-a365-486d-9af9-466d0217e039"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="0" width="100" height="20" uuid="41b7f023-5149-45d4-be50-8e94825e2c3c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="438" y="0" width="117" height="20" uuid="88de7163-92fa-4a16-a336-a3c3770bf59b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[emailforn]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="54" height="20" uuid="c5180f5d-3b01-47d2-a35f-3f42cfe9b766"/>
+				<textFieldExpression><![CDATA[$F{idforn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="112" height="20" uuid="42ecc2ea-a02f-4561-8469-2373b4b7d31f"/>
+				<textFieldExpression><![CDATA[$F{nomeforn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="0" width="172" height="20" uuid="94509a8f-86f8-42d1-8e73-08a420e56a1f"/>
+				<textFieldExpression><![CDATA[$F{endforn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="338" y="0" width="100" height="20" uuid="d2e6602d-5984-400b-ae1d-965816d8cb5a"/>
+				<textFieldExpression><![CDATA[$F{fonefor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="438" y="0" width="117" height="20" uuid="84bdbdba-a66e-41bb-8a1a-c9492844a338"/>
+				<textFieldExpression><![CDATA[$F{emailforn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="4f764c11-af7f-4d20-9beb-4f311d863d8a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
